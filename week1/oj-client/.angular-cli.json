@@ -19,9 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
-      "scripts": [],
+      "scripts": ["/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/jquery/dist/jquery.js","/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/bootstrap/dist/js/bootstrap.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
