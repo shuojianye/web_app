@@ -18,7 +18,8 @@ const routes: Routes = [
     },
     {
         path:'**',
-        component:'http://google.com'
+        redirectTo:'problems'
+        
     }
 ];
 
