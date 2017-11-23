@@ -3,7 +3,7 @@ import{ Problem} from '../model/problem.model';
 import{PROB} from '../model/mock_p';
 @Injectable()
 export class DataService {
-
+  problems: Problem[] = PROB;
   constructor() { }
 
   getProblems(): Problem[]{
@@ -11,6 +11,10 @@ export class DataService {
   }
 
   getProblem(id: number): Problem{
-    return PROB.find((problem)=>problem.id ===id);
+    return this.problems.find((problem)=>problem.id ===id);
+  }
+  addProblem(problem: Problem){
+    problem.id = this.problems.length+1;
+    this.problems.push(problem);
   }
 }
