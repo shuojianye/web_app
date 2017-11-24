@@ -4,8 +4,8 @@ import {DataService} from '../../services/data.service'
 const DEFAULT_P: Problem = Object.freeze({
   id: 0,
   name: '',
-  dscp:'',
-  dif:'superhard'
+  desc:'',
+  difficulty:'superhard'
 });
 @Component({
   selector: 'app-new-problem',
