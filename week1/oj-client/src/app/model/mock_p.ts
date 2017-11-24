@@ -3,5 +3,5 @@ export const PROB: Problem[] = [{
     id:1,
     name: "hahah",
     dscp:'meishadongxi',
-    dif: "Superhard"
+    dif: "superhard"
   }]
