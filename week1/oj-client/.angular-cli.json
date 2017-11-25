@@ -20,9 +20,11 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": ["/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/jquery/dist/jquery.js","/home/shuojian/week1_p/bittigercs503-1705/week1/oj-client/node_modules/bootstrap/dist/js/bootstrap.min.js"],
+      "scripts": ["../node_modules/jquery/dist/jquery.js",
+                  "../node_modules/bootstrap/dist/js/bootstrap.js"
+                ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
