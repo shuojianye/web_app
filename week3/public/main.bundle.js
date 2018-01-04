@@ -460,7 +460,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/problem-detail/problem-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"container\" *ngIf = \"problem\">\n  <div class = \"col-sm-12 col-md-4\">\n    <div>\n      <h2>\n        {{problem.id}}.{{problem.name}}\n      </h2>\n      <p>\n        {{problem.desc}}\n      </p>\n    </div>\n  </div>\n  <div class = \"hidden -xs col-sm-12 col-md-8\">\n    <app-editor>\n\n    </app-editor>\n  </div>\n</div>\n"
+module.exports = "<div class = \"container\" *ngIf = \"problem\">\n  <div class = \"col-sm-12 col-md-4\">\n    <div>\n      <h2>\n        {{problem.id}}.{{problem.name}}\n      </h2>\n      <p>\n        {{problem.desc}}\n      </p>\n    </div>\n  </div>\n  <div >\n    <app-editor>\n\n    </app-editor>\n  </div>\n</div>\n"
 
 /***/ }),
 
