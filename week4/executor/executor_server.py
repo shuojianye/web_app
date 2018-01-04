@@ -3,6 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 from flask import jsonify
 from flask import request
+import executor_utils as eu
 
 @app.route('/')
 def hello():
@@ -17,6 +18,9 @@ def final():
     code = data['code']
     lang = data['lang']
     print("APT got called: %s in %s"%(code,lang))
-    return jsonify({'build':'build haa', 'run':'tun fromn'})    
+    result = eu.final(code,lang)
+    return jsonify(result)
+    #return jsonify({'build':'build haa', 'run':'tun fromn'})    
 if __name__ == '__main__':
+    eu.load_image()
     app.run(debug = True)
