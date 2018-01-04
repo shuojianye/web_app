@@ -24,6 +24,7 @@ export class EditorComponent implements OnInit {
     this.editor.setTheme("ace/theme/eclipse");
     this.editor.getSession().setMode("ace/mode/javascript");
     this.editor.setValue(this.defaultContent['Java'])
+    this.editor.$blokScrolling = Infinity;
   }
 
 }

@@ -201,7 +201,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/editor/editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"editor\">function foo(items) {\n  var x = \"All this is syntax highlighted\";\n  return x;\n}</div>\n"
+module.exports = "<div id=\"editor\">{{editor}}\n</div>\n"
 
 /***/ }),
 
@@ -233,6 +233,7 @@ var EditorComponent = (function () {
         this.editor.setTheme("ace/theme/eclipse");
         this.editor.getSession().setMode("ace/mode/javascript");
         this.editor.setValue(this.defaultContent['Java']);
+        this.editor.$blokScrolling = Infinity;
     };
     EditorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
