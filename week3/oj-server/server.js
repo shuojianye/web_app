@@ -1,6 +1,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const http = require('http');
+const socketIO = require('socket.io');
+const IO = socketIO();
+const editorSocketService = require('./services/editorSocketService')(IO);
 const restRouter = require('./routes/rest');
 const indexRouter = require('./routes/index');
 const mongoose  = require('mongoose');
@@ -14,4 +18,12 @@ app.use((req,res)=> {
     res.sendFile('index.html',{ root:path.join(__dirname,'../public/')})
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+//app.listen(3000, () => console.log('Example app listening on port 3000!'));
+const server = http.createServer(app);
+IO.attach(server);
+server.listen(3000);
+server.on('listening',onListening);
+
+function onListening(){
+    console.log('ap rning 3000');
+}
