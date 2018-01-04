@@ -188,7 +188,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "@media screen{\n    #editor{\n        height:600px;\n    }\n}", ""]);
 
 // exports
 
@@ -201,7 +201,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/editor/editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  editor works!\n</p>\n"
+module.exports = "<div id=\"editor\">function foo(items) {\n  var x = \"All this is syntax highlighted\";\n  return x;\n}</div>\n"
 
 /***/ }),
 
@@ -223,8 +223,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var EditorComponent = (function () {
     function EditorComponent() {
+        this.defaultContent = {
+            'Java': "public class Example {\n    public static void main(String[] args){\n        //Type your Java code here\n    }\n    }",
+            'Python': "class Solution:\n    def example():\n      #Write your Python code here"
+        };
     }
     EditorComponent.prototype.ngOnInit = function () {
+        this.editor = ace.edit("editor");
+        this.editor.setTheme("ace/theme/eclipse");
+        this.editor.getSession().setMode("ace/mode/javascript");
+        this.editor.setValue(this.defaultContent['Java']);
     };
     EditorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
