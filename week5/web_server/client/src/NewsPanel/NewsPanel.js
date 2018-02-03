@@ -12,9 +12,17 @@ class NewsPanel extends React.Component {
         this.loadMoreNews();
     }
     loadMoreNews(){
-        this.setState({
-            news:[]
+        const news_url = 'http://'+ window.location.hostname + ':3000'+ '/news';
+        const request = new Request(news_url,{method:'GET',cache:false});
+
+        fetch(request)
+         .then(res=>res.json())
+         .then(news => {
+            this.setState({
+            news: this.state.news? this.state.news.concat(news):news,
         })
+        
+        });
     }
     renderNews(){
         const news_list = this.state.news.map(news => {
