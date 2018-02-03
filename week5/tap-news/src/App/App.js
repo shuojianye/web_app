@@ -1,3 +1,5 @@
+import 'materialize-css/dist/css/materialize.min.css'
+
 import  React from 'react';
 import './App.css';
 import logo from './logo.png'
