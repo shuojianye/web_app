@@ -1,8 +1,8 @@
 import json
-from bson.json_util import dumps
 import os
 import sys
 
+import operations
 
 from jsonrpclib.SimpleJSONRPCServer import SimpleJSONRPCServer
 
@@ -21,8 +21,7 @@ def add(num1, num2):
 
 def get_one_news():
     print("get one news caleed")
-    news = mongodb_client.get_db()['week6_demos_news'].find_one()
-    return json.loads(dumps(news))
+    return operations.getOneNews()
 
 RPC_SERVER = SimpleJSONRPCServer((SERVER_HOST, SERVER_PORT))
 RPC_SERVER.register_function(add, 'add')
